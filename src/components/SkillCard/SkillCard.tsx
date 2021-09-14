@@ -1,8 +1,12 @@
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity, TouchableOpacityProps } from 'react-native';
 import { styles } from './SkillCard.styles';
 
-const SkillCard = ({ skill, ...rest }) => {
+type SkillCardProps = TouchableOpacityProps & {
+  skill: string;
+};
+
+const SkillCard: React.FC<SkillCardProps> = ({ skill, ...rest }) => {
   return (
     <TouchableOpacity activeOpacity={0.7} style={styles.button} {...rest}>
       <Text style={styles.buttonText}>{skill}</Text>

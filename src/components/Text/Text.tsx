@@ -1,8 +1,10 @@
 import React from 'react';
-import { Text as BaseText } from 'react-native';
+import { Text as BaseText, TextProps as BaseTextProps } from 'react-native';
 import { useTheme } from '../../hooks';
 
-const Text = ({ children, style, ...rest }) => {
+type TextProps = BaseTextProps;
+
+const Text: React.FC<TextProps> = ({ children, style, ...rest }) => {
   const { color } = useTheme();
 
   return (

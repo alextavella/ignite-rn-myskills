@@ -1,8 +1,10 @@
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity, TouchableOpacityProps } from 'react-native';
 import { styles } from './Button.styles';
 
-const Button = ({ children, ...rest }) => {
+type ButtonProps = TouchableOpacityProps;
+
+const Button: React.FC<ButtonProps> = ({ children, ...rest }) => {
   return (
     <TouchableOpacity activeOpacity={0.7} style={styles.button} {...rest}>
       <Text style={styles.buttonText}>{children}</Text>

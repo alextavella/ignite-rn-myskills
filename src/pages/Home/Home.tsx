@@ -5,9 +5,9 @@ import { useTheme } from '../../hooks';
 import { styles } from './Home.styles';
 
 const Home = () => {
-  const { backgroundStyle, backgroundColor } = useTheme();
+  const { backgroundColor } = useTheme();
 
-  const [gretting] = React.useState(() => {
+  const [gretting] = React.useState<string>(() => {
     const currentHour = new Date(Date.now()).getHours();
     return currentHour <= 12
       ? 'Good morning!'
@@ -16,8 +16,8 @@ const Home = () => {
       : 'Good night!';
   });
 
-  const [newSkill, setNewSkill] = React.useState('');
-  const [mySkills, setMySkills] = React.useState([
+  const [newSkill, setNewSkill] = React.useState<string>('');
+  const [mySkills, setMySkills] = React.useState<string[]>([
     'Flutter',
     'Android',
     'Javascript',
@@ -43,7 +43,7 @@ const Home = () => {
 
   return (
     <>
-      <SafeAreaView backgroundColor={backgroundStyle} />
+      <SafeAreaView />
       <View style={[styles.container, { backgroundColor }]}>
         <Text style={styles.title}>Welcome, Alex</Text>
 

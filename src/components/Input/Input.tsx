@@ -1,8 +1,10 @@
 import React from 'react';
-import { TextInput } from 'react-native';
+import { TextInput, TextInputProps } from 'react-native';
 import { styles } from './Input.styles';
 
-const Input = ({ ...rest }) => {
+type InputProps = TextInputProps;
+
+const Input: React.FC<InputProps> = ({ ...rest }) => {
   return (
     <TextInput style={styles.input} placeholderTextColor="#555" {...rest} />
   );
