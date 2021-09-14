@@ -4,11 +4,11 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 export const useTheme = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   const backgroundColor = isDarkMode ? Colors.black : Colors.white;
+
+  const backgroundStyle = {
+    backgroundColor,
+  };
 
   const color = isDarkMode ? Colors.white : Colors.black;
 

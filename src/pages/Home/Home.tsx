@@ -5,7 +5,7 @@ import { useTheme } from '../../hooks';
 import { styles } from './Home.styles';
 
 const Home = () => {
-  const { backgroundColor } = useTheme();
+  const { backgroundStyle, backgroundColor } = useTheme();
 
   const [gretting] = React.useState<string>(() => {
     const currentHour = new Date(Date.now()).getHours();
@@ -45,7 +45,7 @@ const Home = () => {
 
   return (
     <>
-      <SafeAreaView />
+      <SafeAreaView style={backgroundStyle} />
       <View style={[styles.container, { backgroundColor }]}>
         <Text style={styles.title}>Welcome, Alex</Text>
 
