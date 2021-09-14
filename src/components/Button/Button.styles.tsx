@@ -8,9 +8,15 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 20,
   },
+  buttonDisabled: {
+    backgroundColor: '#382557',
+  },
   buttonText: {
     color: '#FFFFFF',
     fontSize: 18,
     fontWeight: 'bold',
+  },
+  buttonTextDisabled: {
+    color: '#CCCCCC',
   },
 });

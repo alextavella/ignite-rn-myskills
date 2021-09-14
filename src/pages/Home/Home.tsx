@@ -30,6 +30,8 @@ const Home = () => {
     'MySQL',
   ]);
 
+  const isDisabled = React.useMemo<boolean>(() => !newSkill, [newSkill]);
+
   const handleAddNewSkill = React.useCallback(() => {
     if (newSkill) {
       setMySkills(state => [...state, newSkill]);
@@ -55,7 +57,11 @@ const Home = () => {
           value={newSkill}
         />
 
-        <Button onPress={handleAddNewSkill}>Add Skill</Button>
+        <Button
+          label="Add Skill"
+          disabled={isDisabled}
+          onPress={handleAddNewSkill}
+        />
 
         <Text style={[styles.title, styles.subtitle]}>My Skills</Text>
 
