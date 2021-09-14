@@ -18,16 +18,11 @@ const Home = () => {
 
   const [newSkill, setNewSkill] = React.useState<string>('');
   const [mySkills, setMySkills] = React.useState<string[]>([
-    'Flutter',
-    'Android',
     'Javascript',
     'React Js',
     'React Native',
     'Node.js',
     'Typescript',
-    'MongoDB',
-    'Postgres',
-    'MySQL',
   ]);
 
   const isDisabled = React.useMemo<boolean>(() => !newSkill, [newSkill]);
@@ -52,8 +47,12 @@ const Home = () => {
         <Text style={styles.greetings}>{gretting}</Text>
 
         <Input
+          autoFocus
+          keyboardType="default"
+          returnKeyType="done"
           placeholder="New skill"
           onChangeText={setNewSkill}
+          onSubmitEditing={handleAddNewSkill}
           value={newSkill}
         />
 
