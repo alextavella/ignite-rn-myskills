@@ -62,7 +62,9 @@ const Home = () => {
           onPress={handleAddNewSkill}
         />
 
-        <Text style={[styles.title, styles.subtitle]}>My Skills</Text>
+        {mySkills.length > 0 && (
+          <Text style={[styles.title, styles.subtitle]}>My Skills</Text>
+        )}
 
         <FlatList
           data={mySkills}
